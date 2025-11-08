@@ -55,8 +55,14 @@ echo ""
 
 # Configure Firebase
 echo "🔥 Configuring Firebase for this project..."
-echo "Please select your Firebase project or create a new one"
 echo ""
+echo "⚠️  IMPORTANT: You MUST create a NEW Firebase project!"
+echo "❌ DO NOT use the existing 'flutter-e273f' project"
+echo "✅ Choose 'Create a new project' when prompted"
+echo ""
+echo "Suggested project name: my-fcm-app-$(whoami)"
+echo ""
+read -p "Press Enter to continue..."
 flutterfire configure
 if [ $? -ne 0 ]; then
     echo "❌ Firebase configuration failed"

@@ -200,6 +200,20 @@ flutter pub get
 ❌ Error getting FCM token: SERVICE_NOT_AVAILABLE
 ```
 
+### ⚠️ **CRITICAL: Create Your Own Firebase Project**
+
+**DO NOT** try to use the existing "flutter-e273f" project from this repository!  
+- ❌ You will get `PERMISSION_DENIED` errors  
+- ❌ You don't have access to someone else's Firebase project  
+- ✅ You MUST create your own Firebase project
+
+#### Check Current Config:
+```bash
+# Check if Firebase is properly configured
+./check_firebase_config.sh      # Linux/Mac
+check_firebase_config.bat       # Windows
+```
+
 #### Automated Setup (Easiest):
 ```bash
 # Linux/Mac
@@ -231,7 +245,8 @@ flutterfire configure
 
 #### Detailed Guides:
 📖 **Setup:** [SETUP_FIREBASE.md](SETUP_FIREBASE.md) - Complete step-by-step instructions  
-🚨 **Troubleshooting:** [TROUBLESHOOTING.md](TROUBLESHOOTING.md) - Common errors & solutions
+� **Manual Setup:** [MANUAL_SETUP.md](MANUAL_SETUP.md) - Alternative if FlutterFire CLI fails  
+�🚨 **Troubleshooting:** [TROUBLESHOOTING.md](TROUBLESHOOTING.md) - Common errors & solutions
 
 ### Run the App
 ```bash
