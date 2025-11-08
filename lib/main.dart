@@ -7,13 +7,22 @@ import 'pages/fcm_test_page.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   
-  // Initialize Firebase
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-  
-  // Initialize FCM
-  await FCMService.FCMService.initialize();
+  try {
+    // Initialize Firebase
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+    
+    // Initialize FCM
+    await FCMService.FCMService.initialize();
+  } catch (e) {
+    print('❌ Firebase initialization failed: $e');
+    print('');
+    print('🔥 FIREBASE SETUP REQUIRED 🔥');
+    print('Please setup Firebase configuration before running the app.');
+    print('See README.md for setup instructions.');
+    print('');
+  }
   
   runApp(const MyApp());
 }
@@ -88,6 +97,17 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _fcmToken = token;
     });
+  }
+  
+  String get _fcmTokenDisplay {
+    if (_fcmToken == null) {
+      return 'Firebase setup required!\n\n'
+             '🔥 FCM Token not available\n'
+             '📖 See SETUP_FIREBASE.md for setup instructions\n'
+             '💡 Quick fix: Run "flutterfire configure"\n'
+             '🚀 Or tap the notification icon below for help';
+    }
+    return _fcmToken!;
   }
 
   @override

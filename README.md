@@ -185,22 +185,49 @@ fu_RgOlwTWu6y2Klv3D3BX:APA91bHl9cvA1cseRvH5laaDnyoKDoP0J1XvJZSnKPB4zRDG8KfKVT8Jb
 ### Installation
 ```bash
 # Clone project
-git clone <repository-url>
+git clone https://github.com/adipramanadev/flutternotiffcm.git
 cd flutternotiffcm
 
 # Install dependencies
 flutter pub get
-
-# Run aplikasi
-flutter run
 ```
 
-### Firebase Setup
-1. Create Firebase project di [Firebase Console](https://console.firebase.google.com/)
+### 🔥 **IMPORTANT: Firebase Setup Required**
+
+**After cloning, you MUST configure Firebase or the app will show errors:**
+
+```
+❌ Error getting FCM token: SERVICE_NOT_AVAILABLE
+```
+
+#### Quick Setup (Recommended):
+```bash
+# Install FlutterFire CLI
+dart pub global activate flutterfire_cli
+
+# Login to Firebase
+firebase login
+
+# Configure Firebase automatically
+flutterfire configure
+```
+
+#### Manual Setup:
+1. Create Firebase project at [Firebase Console](https://console.firebase.google.com/)
 2. Add Android app dengan package name: `com.example.flutternotiffcm`
 3. Download `google-services.json` dan letakkan di `android/app/`
-4. Enable Cloud Messaging di Firebase Console
-5. Run aplikasi dan copy FCM token untuk testing
+4. Copy `lib/firebase_options_template.dart` to `lib/firebase_options.dart`
+5. Replace template values dengan your Firebase project config
+6. Enable Cloud Messaging di Firebase Console
+
+#### Detailed Setup Guide:
+📖 **See [SETUP_FIREBASE.md](SETUP_FIREBASE.md) for complete step-by-step instructions**
+
+### Run the App
+```bash
+# After Firebase setup
+flutter run
+```
 
 ## 🚀 Ready for Production
 
