@@ -29,9 +29,13 @@ cd flutternotiffcm
 flutterfire configure
 ```
 
-### 4. Select your Firebase project or create new one
-- Choose existing project or create new project
-- Select platforms you want to support (Android, iOS, Web, etc.)
+### 4. **IMPORTANT: Create NEW project (don't use existing)**
+⚠️ **DO NOT** try to use the existing "flutter-e273f" project - you don't have permission!
+
+When FlutterFire CLI asks:
+- **Select project**: Choose **"Create a new project"** 
+- **Project name**: Enter something like "my-fcm-app-[yourname]"
+- **Select platforms**: Choose Android (and others if needed)
 - FlutterFire CLI will automatically generate configuration files
 
 ### 5. Enable Cloud Messaging

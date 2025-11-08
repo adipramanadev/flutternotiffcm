@@ -183,15 +183,18 @@ class FCMService {
           print('This error usually means Firebase is not properly configured.');
           print('');
           print('📋 To fix this:');
-          print('1. Create your own Firebase project at https://console.firebase.google.com/');
+          print('1. Create YOUR OWN Firebase project at https://console.firebase.google.com/');
           print('2. Add Android app with package: com.example.flutternotiffcm');
           print('3. Download google-services.json to android/app/');
           print('4. Copy lib/firebase_options_template.dart to lib/firebase_options.dart');
           print('5. Replace template values with your Firebase project config');
           print('');
-          print('🚀 OR use FlutterFire CLI:');
+          print('🚀 OR use FlutterFire CLI (create NEW project):');
           print('dart pub global activate flutterfire_cli');
           print('flutterfire configure');
+          print('');
+          print('⚠️  IMPORTANT: Do NOT try to use "flutter-e273f" project!');
+          print('✅ You must create your own Firebase project for this to work.');
           print('');
         }
       }

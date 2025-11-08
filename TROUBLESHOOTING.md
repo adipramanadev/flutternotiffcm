@@ -13,6 +13,40 @@ token null
 ### ❌ **Root Cause:**
 This error occurs because Firebase is not properly configured for your development environment. When you clone this repository, you get the source code but not the Firebase configuration files that connect to a Firebase project.
 
+## Error: `PERMISSION_DENIED` (FlutterFire CLI)
+
+### Full Error Message:
+```
+Failed to write android google-services.json file write for default service file.
+ServiceFileRequirementException: android - Failed to obtain the service file: google-services.json for android. Response code: 403. Response body: {
+  "error": {
+    "code": 403,
+    "message": "The caller does not have permission",
+    "status": "PERMISSION_DENIED"
+  }
+}
+```
+
+### ❌ **Root Cause:**
+You're trying to access a Firebase project that belongs to someone else (the original repository owner). You don't have permission to access their Firebase project.
+
+### ✅ **Solution:**
+**You MUST create your own Firebase project!** Don't try to use the existing "flutter-e273f" project.
+
+#### Quick Fix:
+1. **Create new Firebase project** at [Firebase Console](https://console.firebase.google.com/)
+2. **Name it something unique**: `my-fcm-app-[yourname]`
+3. **Use Manual Setup**: Follow [MANUAL_SETUP.md](MANUAL_SETUP.md) for step-by-step instructions
+4. **Never select existing projects** when using FlutterFire CLI
+
+#### Alternative Solutions:
+- **Option 1**: Use [MANUAL_SETUP.md](MANUAL_SETUP.md) - Most reliable
+- **Option 2**: Try FlutterFire CLI again but **create new project**:
+  ```bash
+  flutterfire configure
+  # Choose "Create a new project" - NOT existing project
+  ```
+
 ### ✅ **Solutions:**
 
 #### Option 1: Automated Setup (Recommended)
