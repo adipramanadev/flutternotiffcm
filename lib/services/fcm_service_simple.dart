@@ -174,6 +174,26 @@ class FCMService {
     } catch (e) {
       if (kDebugMode) {
         print('❌ Error getting FCM token: $e');
+        
+        // Check for common Firebase configuration issues
+        if (e.toString().contains('SERVICE_NOT_AVAILABLE') || 
+            e.toString().contains('java.io.IOException')) {
+          print('');
+          print('🔥 FIREBASE SETUP REQUIRED 🔥');
+          print('This error usually means Firebase is not properly configured.');
+          print('');
+          print('📋 To fix this:');
+          print('1. Create your own Firebase project at https://console.firebase.google.com/');
+          print('2. Add Android app with package: com.example.flutternotiffcm');
+          print('3. Download google-services.json to android/app/');
+          print('4. Copy lib/firebase_options_template.dart to lib/firebase_options.dart');
+          print('5. Replace template values with your Firebase project config');
+          print('');
+          print('🚀 OR use FlutterFire CLI:');
+          print('dart pub global activate flutterfire_cli');
+          print('flutterfire configure');
+          print('');
+        }
       }
       return null;
     }

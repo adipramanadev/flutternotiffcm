@@ -27,13 +27,23 @@ class _FCMTestPageState extends State<FCMTestPage> {
       String? token = await FCMService.FCMService.getToken();
       setState(() {
         _fcmToken = token;
-        _status = token != null ? 'FCM Ready ✅' : 'FCM Token not available ❌';
-        _messages.add('FCM initialized: ${token != null ? 'Success' : 'Failed'}');
+        if (token != null) {
+          _status = 'FCM Ready ✅';
+          _messages.add('✅ FCM initialized successfully');
+          _messages.add('ℹ️ Token generated: ${token.substring(0, 20)}...');
+        } else {
+          _status = 'FCM Setup Required ⚠️';
+          _messages.add('❌ FCM initialization failed');
+          _messages.add('🔥 Firebase configuration needed');
+          _messages.add('📖 See SETUP_FIREBASE.md for instructions');
+          _messages.add('💡 Quick fix: Run "flutterfire configure"');
+        }
       });
     } catch (e) {
       setState(() {
         _status = 'FCM Error: $e';
-        _messages.add('FCM Error: $e');
+        _messages.add('❌ FCM Error: $e');
+        _messages.add('🔧 Check Firebase configuration');
       });
     }
   }
