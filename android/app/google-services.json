@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "175405197111",
+    "project_id": "flutter-e273f",
+    "storage_bucket": "flutter-e273f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:175405197111:android:8105037c828b951fc69cb2",
+        "android_client_info": {
+          "package_name": "com.example.flutternotiffcm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLmFyxT1RNgYUQj89Zn2V3DL0apj3iwZk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
