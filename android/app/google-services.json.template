@@ -1,7 +1,9 @@
 {
+  "_comment": "This is a template file. Copy this to google-services.json and replace with your Firebase project values",
+  "_instructions": "Download the real google-services.json from Firebase Console and replace this file",
   "project_info": {
     "project_number": "123456789",
-    "project_id": "your-project-id",
+    "project_id": "your-project-id", 
     "storage_bucket": "your-project-id.appspot.com"
   },
   "client": [

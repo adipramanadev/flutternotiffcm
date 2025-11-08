@@ -200,7 +200,16 @@ flutter pub get
 ❌ Error getting FCM token: SERVICE_NOT_AVAILABLE
 ```
 
-#### Quick Setup (Recommended):
+#### Automated Setup (Easiest):
+```bash
+# Linux/Mac
+./setup_firebase.sh
+
+# Windows
+setup_firebase.bat
+```
+
+#### Manual Quick Setup:
 ```bash
 # Install FlutterFire CLI
 dart pub global activate flutterfire_cli
@@ -220,8 +229,9 @@ flutterfire configure
 5. Replace template values dengan your Firebase project config
 6. Enable Cloud Messaging di Firebase Console
 
-#### Detailed Setup Guide:
-📖 **See [SETUP_FIREBASE.md](SETUP_FIREBASE.md) for complete step-by-step instructions**
+#### Detailed Guides:
+📖 **Setup:** [SETUP_FIREBASE.md](SETUP_FIREBASE.md) - Complete step-by-step instructions  
+🚨 **Troubleshooting:** [TROUBLESHOOTING.md](TROUBLESHOOTING.md) - Common errors & solutions
 
 ### Run the App
 ```bash

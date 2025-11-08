@@ -162,7 +162,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 borderRadius: BorderRadius.circular(8),
               ),
               child: SelectableText(
-                _fcmToken ?? 'Loading FCM Token...',
+                _fcmTokenDisplay,
                 style: const TextStyle(fontSize: 12),
               ),
             ),
